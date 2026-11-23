@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>หน้าแรก | เที่ยวบ้านเรา</title>
+  <link rel="stylesheet" href="style.css">
+ <style>
+    .slider-box {
+      position: relative;
+      overflow: hidden;
+      border-radius: 0.75rem;
+      border: 1px solid #d1e2d7;
+      background: #ffffff;
+      margin: 1.25rem 0;
+    }
+
+    .slider-track {
+      display: flex;
+      transition: transform 0.45s ease;
+    }
+
+    .slide {
+      min-width: 100%;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 0;
+    }
+
+    .slide-caption {
+      padding: 0.75rem 1rem;
+      font-weight: bold;
+      color: #212121;
+    }
+
+    .slider-btn {
+      position: absolute;
+      top: 180px;
+      transform: translateY(-50%);
+      background: rgba(39, 71, 52, 0.8);
+      color: #ffffff;
+      border: none;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    .slider-btn:hover {
+      background: #1c3526;
+    }
+
+    .slider-btn.prev { left: 0.75rem; }
+    .slider-btn.next { right: 0.75rem; }
+
+    .slider-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem;
+    }
+
+    .slider-dot {
+      width: 0.7rem;
+      height: 0.7rem;
+      border-radius: 50%;
+      border: none;
+      background: #c5d6cb;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .slider-dot.active {
+      background: #274734;
+    }
+
+    @media (max-width: 600px) {
+      .slide img { height: 220px; }
+      .slider-btn { top: 110px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="site-name">เที่ยวบ้านเรา</p>
+    <nav aria-label="เมนูหลัก">
+      <ul>
+        <li><a href="index.html">หน้าแรก</a></li>
+        <li><a href="places.html">ที่เที่ยว</a></li>
+        <li><a href="food.html">อาหาร</a></li>
+        <li><a href="plan.html">วางแผนเที่ยว</a></li>
+        <li><a href="travel.html">ข้อมูลการเดินทาง</a></li>
+        <li><a href="login.html">ข้อมูลการเดินทาง</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>เที่ยวบ้านเราในหนึ่งวัน</h1>
+    <p>ชวนเดินตลาด ชิมอาหารพื้นถิ่น และพักชมวิวในชุมชน</p>
+
+    <section class="slider-box" aria-label="รูปภาพสถานที่ท่องเที่ยว">
+      <div class="slider-track" id="sliderTrack">
+        <div class="slide">
+          <img src="images/pic1.png" alt="เที่ยวบ้านเราในหนึ่งวัน จังหวัดประจวบคีรีขันธ์">
+          <div class="slide-caption">เที่ยวบ้านเราในหนึ่งวัน จังหวัดประจวบคีรีขันธ์</div>
+        </div>
+        <div class="slide">
+          <img src="images/aomanow.jpg" alt="อ่าวมะนาว">
+          <div class="slide-caption">อ่าวมะนาว</div>
+        </div>
+        <div class="slide">
+          <img src="images/Kaow.jpg" alt="เขาช่องกระจก">
+          <div class="slide-caption">เขาช่องกระจก</div>
+        </div>
+        <div class="slide">
+          <img src="images/KLM.jpg" alt="จุดชมวิวเขาช่องกระจกและอ่าวประจวบ">
+          <div class="slide-caption">วิวอ่าวประจวบคีรีขันธ์</div>
+        </div>
+        <div class="slide">
+          <img src="images/lukmuang.jpg" alt="ศาลหลักเมืองประจวบคีรีขันธ์">
+          <div class="slide-caption">ศาลหลักเมืองประจวบคีรีขันธ์</div>
+        </div>
+        <div class="slide">
+          <img src="images/sapanpla.jpg" alt="สะพานปลา">
+          <div class="slide-caption">สะพานปลาประจวบคีรีขันธ์</div>
+        </div>
+        <div class="slide">
+          <img src="images/market1.jpg" alt="ตลาดของฝากท้องถิ่น">
+          <div class="slide-caption">ตลาดของฝากท้องถิ่น</div>
+        </div>
+        <div class="slide">
+          <img src="images/pic2.jpg" alt="ต่ายกาแฟโบราณ">
+          <div class="slide-caption">ต่ายกาแฟโบราณ</div>
+        </div>
+        <div class="slide">
+          <img src="images/maptravel.jpg" alt="แผนที่ที่เที่ยวประจวบคีรีขันธ์">
+          <div class="slide-caption">รวมที่เที่ยวประจวบคีรีขันธ์</div>
+        </div>
+      </div>
+
+      <button type="button" class="slider-btn prev" id="prevBtn" aria-label="รูปก่อนหน้า">‹</button>
+      <button type="button" class="slider-btn next" id="nextBtn" aria-label="รูปถัดไป">›</button>
+
+      <div class="slider-dots" id="sliderDots"></div>
+    </section>
+
+    <section class="card">
+      <h2>เริ่มจากจุดที่คุณสนใจ</h2>
+      <p>เลือกสถานที่ที่อยากไป แล้วจัดเส้นทางให้เหมาะกับเวลาของคุณ</p>
+      <a class="button" href="places.html">ดูแหล่งท่องเที่ยว</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>อริยา038 | ใบงานฝึกปฏิบัติวิชาการสร้างเว็บไซต์ทางธุรกิจ</p>
+  </footer>
+
+  <script>
+    const track = document.getElementById("sliderTrack");
+    const slides = document.querySelectorAll(".slide");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const dotsContainer = document.getElementById("sliderDots");
+
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+
+    slides.forEach((_, index) => {
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "slider-dot" + (index === 0 ? " active" : "");
+      dot.setAttribute("aria-label", "ไปที่รูปที่ " + (index + 1));
+      dot.addEventListener("click", () => {
+        goToSlide(index);
+        resetAutoPlay();
+      });
+      dotsContainer.appendChild(dot);
+    });
+
+    const dots = document.querySelectorAll(".slider-dot");
+
+    function goToSlide(index) {
+      currentIndex = (index + totalSlides) % totalSlides;
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+      dots.forEach((dot, i) => {
+        dot.classList.toggle("active", i === currentIndex);
+      });
+    }
+
+    prevBtn.addEventListener("click", () => {
+      goToSlide(currentIndex - 1);
+      resetAutoPlay();
+    });
+
+    nextBtn.addEventListener("click", () => {
+      goToSlide(currentIndex + 1);
+      resetAutoPlay();
+    });
+
+    let autoPlay = setInterval(() => {
+      goToSlide(currentIndex + 1);
+    }, 3500);
+
+    function resetAutoPlay() {
+      clearInterval(autoPlay);
+      autoPlay = setInterval(() => {
+        goToSlide(currentIndex + 1);
+      }, 3500);
+    }
+  </script>
+</body>
+</html>

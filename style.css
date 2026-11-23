@@ -1,0 +1,147 @@
+* {
+box-sizing: border-box;
+}
+body {
+	margin: 0;
+	font-family: system-ui, sans-serif;
+	line-height: 1.65;
+	color: #212121;        /*สีตัวอักษรที่แสดงผลในส่วนของเนื้อหาเว็บ*/
+	background: #feefcd;    /*สีพื้นหลังของตัวเว็บ*/
+}
+header, footer {
+	padding: 1rem;
+	color: #ffffff;   
+	background: #463531;   /*สีพื้นหลังของส่วนหัวเว็บและท้ายเว็บ*/
+}
+.site-name {
+	margin: 0 0 0.5rem;
+	font-size: 1.25rem;
+	font-weigth: bold;
+}
+nav ul {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+nav a {
+	display: block;
+	padding: 0.35rem 0.75rem;
+	color: #db7f8e;   /*สีตัวอักษรบนเมนู*/
+	border-radius: 0.35rem;
+}
+nav a:hover, nav a[aria-current="page"] {
+	background: #db7f8e;   /*พื้นหลังของเมนูเมื่อเอาเมาส์ไปวางชี้*/
+	color: #174c3c;
+}
+a:focus-visible {
+	outline: 3px solid #db7f8e;
+	outline-offset: 3px;
+}
+main {
+	width: min(92%, 56rem);
+	margin: 2rem auto;
+}
+.card {
+	margin: 1rem 0;
+	padding: 1rem;
+	border: 1px solid #d1e2d7;
+	border-radius: 0.75rem;
+	background: #d5c5c8;  /*สีพื้นหลังของกรอบcard*/
+}
+img {
+	display: block;
+	max-width: 100%;
+	heigth: auto;
+	border-radius: 0.5rem;
+}
+.button {
+	display: inline-block;
+	padding: 0.6rem 1rem;
+	border-radius: 0.35rem;
+	background: #555154;  /*สีของปุ่ม*/
+	color: white;
+	text-decoration: none;
+}
+<style>
+    .slider-box {
+      position: relative;
+      overflow: hidden;
+      border-radius: 0.75rem;
+      border: 1px solid #d1e2d7;
+      background: #ffffff;
+      margin: 1.25rem 0;
+    }
+
+    .slider-track {
+      display: flex;
+      transition: transform 0.45s ease;
+    }
+
+    .slide {
+      min-width: 100%;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 0;
+    }
+
+    .slide-caption {
+      padding: 0.75rem 1rem;
+      font-weight: bold;
+      color: #212121;
+    }
+
+    .slider-btn {
+      position: absolute;
+      top: 180px;
+      transform: translateY(-50%);
+      background: rgba(39, 71, 52, 0.8);
+      color: #ffffff;
+      border: none;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    .slider-btn:hover {
+      background: #1c3526;
+    }
+
+    .slider-btn.prev { left: 0.75rem; }
+    .slider-btn.next { right: 0.75rem; }
+
+    .slider-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem;
+    }
+
+    .slider-dot {
+      width: 0.7rem;
+      height: 0.7rem;
+      border-radius: 50%;
+      border: none;
+      background: #c5d6cb;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .slider-dot.active {
+      background: #274734;
+    }
+
+    @media (max-width: 600px) {
+      .slide img { height: 220px; }
+      .slider-btn { top: 110px; }
+    }
+  </style>
+</head>

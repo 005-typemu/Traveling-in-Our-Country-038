@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>เข้าสู่ระบบ | เที่ยวบ้านเรา</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .login-top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .login-card {
+      max-width: 30rem;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.35rem;
+      font-weight: bold;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.65rem 0.75rem;
+      border: 1px solid #b8cbbd;
+      border-radius: 0.45rem;
+      font-size: 1rem;
+      font-family: inherit;
+      background: #ffffff;
+      color: #212121;
+    }
+
+    .form-control:focus {
+      outline: 2px solid #274734;
+      outline-offset: 1px;
+    }
+
+    .password-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .password-wrapper .form-control {
+      padding-right: 4.5rem;
+    }
+
+    .toggle-password-btn {
+      position: absolute;
+      right: 0.5rem;
+      padding: 0.3rem 0.6rem;
+      border: 1px solid #b8cbbd;
+      border-radius: 0.35rem;
+      background: #f4f8f5;
+      color: #274734;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+
+    .form-meta {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 1rem;
+    }
+
+    .text-link {
+      color: #274734;
+      font-size: 0.9rem;
+      text-decoration: underline;
+    }
+
+    .btn-block {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 0.65rem;
+      border: none;
+      font-size: 1rem;
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    .btn-outline {
+      display: inline-block;
+      padding: 0.55rem 0.95rem;
+      border: 1px solid #274734;
+      border-radius: 0.35rem;
+      background: #ffffff;
+      color: #274734;
+      text-decoration: none;
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
+
+    .btn-outline:hover {
+      background: #eef5f0;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin: 1.25rem 0;
+      color: #555555;
+      font-size: 0.9rem;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #d1e2d7;
+    }
+
+    .social-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+      padding: 0.6rem 1rem;
+      margin-bottom: 0.6rem;
+      border: 1px solid #b8cbbd;
+      border-radius: 0.35rem;
+      background: #ffffff;
+      color: #212121;
+      font-size: 0.95rem;
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    .social-btn:hover {
+      background: #f4f8f5;
+    }
+
+    .register-box {
+      margin-top: 1.25rem;
+      padding-top: 1rem;
+      border-top: 1px solid #d1e2d7;
+      text-align: center;
+    }
+
+    .register-box p {
+      margin: 0 0 0.5rem;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="site-name">เที่ยวบ้านเรา</p>
+    <nav aria-label="เมนูหลัก">
+      <ul>
+        <li><a href="index.html">หน้าแรก</a></li>
+        <li><a href="places.html">ที่เที่ยว</a></li>
+        <li><a href="food.html">อาหาร</a></li>
+        <li><a href="plan.html">วางแผนเที่ยว</a></li>
+        <li><a href="travel.html">ข้อมูลการเดินทาง</a></li>
+	<li><a href="login.html">เข้าสู่ระบบ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="login-card">
+      <div class="login-top-bar">
+        <button type="button" class="btn-outline" onclick="history.back()">← ย้อนกลับ</button>
+        <a href="#help" class="btn-outline" id="helpBtn">ช่วยเหลือ</a>
+      </div>
+
+      <section class="card">
+        <h1>เข้าสู่ระบบ</h1>
+
+        <form id="loginForm" action="#" method="post">
+          <div class="form-group">
+            <label for="account">หมายเลขโทรศัพท์ / Email / ชื่อผู้ใช้</label>
+            <input
+              type="text"
+              id="account"
+              name="account"
+              class="form-control"
+              placeholder="กรอกหมายเลขโทรศัพท์, อีเมล หรือชื่อผู้ใช้"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="password">รหัสผ่าน</label>
+            <div class="password-wrapper">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                class="form-control"
+                placeholder="กรอกรหัสผ่าน"
+                required
+              >
+              <button type="button" id="togglePassword" class="toggle-password-btn" aria-label="แสดงหรือซ่อนรหัสผ่าน">
+                แสดง
+              </button>
+            </div>
+          </div>
+
+          <div class="form-meta">
+            <a href="#forgot-password" class="text-link" id="forgotPasswordBtn">ลืมรหัสผ่าน</a>
+          </div>
+
+          <button type="submit" class="button btn-block">เข้าสู่ระบบ</button>
+          <button type="button" class="btn-outline btn-block" id="smsLoginBtn">เข้าสู่ระบบด้วย SMS</button>
+        </form>
+
+        <div class="divider">หรือ</div>
+
+        <button type="button" class="social-btn" id="googleBtn">ดำเนินการต่อด้วย Google</button>
+        <button type="button" class="social-btn" id="facebookBtn">ดำเนินการต่อด้วย Facebook</button>
+        <button type="button" class="social-btn" id="lineBtn">ดำเนินการต่อด้วย LINE</button>
+        <button type="button" class="social-btn" id="passkeyBtn">เข้าสู่ระบบด้วยพาสคีย์ (Passkey)</button>
+
+        <div class="register-box">
+          <p>ยังไม่มีบัญชีผู้ใช้ใช่ไหม?</p>
+          <a href="register.html" class="btn-outline">ลงทะเบียน</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>อริยา038 | ใบงานฝึกปฏิบัติวิชาการสร้างเว็บไซต์ทางธุรกิจ</p>
+  </footer>
+
+  <script>
+    const passwordInput = document.getElementById("password");
+    const togglePasswordBtn = document.getElementById("togglePassword");
+
+    togglePasswordBtn.addEventListener("click", function () {
+      const isPassword = passwordInput.type === "password";
+      passwordInput.type = isPassword ? "text" : "password";
+      togglePasswordBtn.textContent = isPassword ? "ซ่อน" : "แสดง";
+    });
+
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("ส่งข้อมูลเข้าสู่ระบบเรียบร้อยแล้ว (ตัวอย่างหน้าเว็บ)");
+    });
+
+    document.getElementById("forgotPasswordBtn").addEventListener("click", function (e) {
+      e.preventDefault();
+      alert("ไปยังหน้ากู้คืนรหัสผ่าน");
+    });
+
+    document.getElementById("smsLoginBtn").addEventListener("click", function () {
+      alert("ส่งรหัส OTP ทาง SMS");
+    });
+
+    document.getElementById("googleBtn").addEventListener("click", function () {
+      alert("ดำเนินการต่อด้วย Google");
+    });
+
+    document.getElementById("facebookBtn").addEventListener("click", function () {
+      alert("ดำเนินการต่อด้วย Facebook");
+    });
+
+    document.getElementById("lineBtn").addEventListener("click", function () {
+      alert("ดำเนินการต่อด้วย LINE");
+    });
+
+    document.getElementById("passkeyBtn").addEventListener("click", function () {
+      alert("เข้าสู่ระบบด้วยพาสคีย์ (Passkey)");
+    });
+
+    document.getElementById("helpBtn").addEventListener("click", function (e) {
+      e.preventDefault();
+      alert("ศูนย์ช่วยเหลือ: หากพบปัญหาการเข้าสู่ระบบ สามารถติดต่อผู้ดูแลระบบได้ครับ");
+    });
+  </script>
+</body>
+</html>
